@@ -1,3 +1,29 @@
-<div *ngFor="let vehicle of vehicles">
-    {{vehicle.modelo}}
+<div class="container text-center">
+    <h1>TuSegundazo.com</h1>
+    <hr>
+    <img src="../../../assets/car.png" />
+        <hr>
+        <table class="table table-striped">
+            <thead class="table-dark">
+              <tr>
+                <th class="text-start" scope="col">#</th>
+                <th class="text-start" scope="col">Marca</th>
+                <th class="text-start" scope="col">Linea</th>
+                <th class="text-start" scope="col">Modelo</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let vehicle of vehicles">
+                    <th class="text-start" scope="row">{{vehicle.id}}</th>
+                    <td class="text-start">{{vehicle.marca}}</td>
+                    <td class="text-start">{{vehicle.linea}}</td>
+                    <td class="text-start">{{vehicle.modelo}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div  class="text-start flex-row"  *ngFor="let brand of brandsList">
+          <p>Total {{brand.nombre}}: {{brand.cantidad}}</p>
+        </div>
 </div>
+
+
