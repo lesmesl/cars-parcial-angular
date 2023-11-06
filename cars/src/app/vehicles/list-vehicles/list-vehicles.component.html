@@ -1,29 +1,42 @@
 <div class="container text-center">
-    <h1>TuSegundazo.com</h1>
-    <hr>
-    <img src="../../../assets/car.png" />
-        <hr>
+  <div class="text-start">
+    <h1 class="mt-2 text-dark fw-bold" style="font-size:24px; text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.284);">TuSegundazo.com</h1>
+  </div>
+    <hr class="m-1" style="box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.284);">
+    <!-- contenedor para la imagen responsive <img src="../../../assets/car.png" /> -->
+    <img src="../../../assets/car.png" class="img-fluid" alt="Responsive image">
+
+    <!-- hr verde y con grosor y sombra -->
+    <hr class="mt-3">
+    <div class="row">
+      <div class="col-8">
         <table class="table table-striped">
-            <thead class="table-dark">
-              <tr>
-                <th class="text-start" scope="col">#</th>
-                <th class="text-start" scope="col">Marca</th>
-                <th class="text-start" scope="col">Linea</th>
-                <th class="text-start" scope="col">Modelo</th>
+          <thead class="table-dark">
+            <tr>
+              <th class="text-start" scope="col">#</th>
+              <th class="text-start" scope="col">Marca</th>
+              <th class="text-start" scope="col">Linea</th>
+              <th class="text-start" scope="col">Modelo</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let vehicle of vehicles">
+                  <th class="text-start" scope="row">{{vehicle.id}}</th>
+                  <td class="text-start">{{vehicle.marca}}</td>
+                  <td class="text-start">{{vehicle.linea}}</td>
+                  <td class="text-start">{{vehicle.modelo}}</td>
               </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let vehicle of vehicles">
-                    <th class="text-start" scope="row">{{vehicle.id}}</th>
-                    <td class="text-start">{{vehicle.marca}}</td>
-                    <td class="text-start">{{vehicle.linea}}</td>
-                    <td class="text-start">{{vehicle.modelo}}</td>
-                </tr>
-            </tbody>
-        </table>
-        <div  class="text-start flex-row"  *ngFor="let brand of brandsList">
-          <p>Total {{brand.nombre}}: {{brand.cantidad}}</p>
-        </div>
+          </tbody>
+      </table>
+      </div>
+
+    </div>
+
+    <div  class="text-start flex-row"  *ngFor="let brand of brandsList">
+      <p class="m-0">Total {{brand.nombre}}: {{brand.cantidad}}</p>
+    </div>
+
+    
 </div>
 
-
+<footer class="m-4 text-center">Contact us: +57 3102105253 - info@tusegundazo.com - @tusegundazo</footer>
